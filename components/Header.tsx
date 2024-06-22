@@ -15,6 +15,18 @@ export default function Header() {
   };
 
   useEffect(() => {
+    const handClickOutsideNav = (e: MouseEvent) => {
+      if (navRef.current && !navRef.current.contains(e.target as Node)) {
+        setIsMobileNavActive(false);
+      }
+    };
+    const updateBodyClas = () => {
+      if (isMobileNavActive) {
+        document.body.classList.add("no-scroll");
+      } else {
+        document.body.classList.remove("no-scroll");
+      }
+    };
     const checkScreenSize = () => {
       setIsSmallScreen(window.innerWidth < 768);
     };
@@ -22,8 +34,13 @@ export default function Header() {
     window.addEventListener("resize", checkScreenSize);
     checkScreenSize();
 
+    document.addEventListener("click", handClickOutsideNav);
+    updateBodyClas();
+
     return () => {
       window.removeEventListener("resize", checkScreenSize);
+      document.removeEventListener("click", handClickOutsideNav);
+      document.body.classList.remove("no-scroll}");
     };
   }, [isMobileNavActive]);
 
@@ -33,7 +50,7 @@ export default function Header() {
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
-          exit={{ opacity: 0 }}
+          exit={{ opacity: 0, y: -10 }}
           className="fixed left-6 right-6 z-10 mt-16 rounded-md bg-eb-white"
         >
           {children}
@@ -45,7 +62,7 @@ export default function Header() {
   const navContent = (
     <ul
       className={cn(
-        "",
+        "hidden",
         isMobileNavActive && "flex w-full flex-col items-center",
       )}
     >
@@ -77,9 +94,8 @@ export default function Header() {
       </AnimatePresence>
       <header className="flex justify-between bg-eb-white">
         <div className="mx-6 flex w-full items-center justify-between">
-          {/* <div className="relative h-[50px] w-[150px]"> */}
-          <div className="">
-            <a href="/" className="relative block h-[50px] w-[150px]">
+          <div className="relative h-[50px] w-[150px]">
+            <a href="#" className="relative block h-[50px] w-[150px]">
               <Image
                 src="./images/logo.svg"
                 alt="logo"
@@ -88,7 +104,7 @@ export default function Header() {
               ></Image>
             </a>
           </div>
-          <nav>
+          <nav ref={navRef}>
             {isSmallScreen ? animateNavWrapper(navContent) : navContent}
           </nav>
           <button
