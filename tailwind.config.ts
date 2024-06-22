@@ -8,8 +8,35 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      colors: {
+        // Primary
+        "eb-dark-blue": "hsl(233, 26%, 24%)",
+        "eb-lime-green": "hsl(136, 65%, 51%)",
+        "eb-bright-cyan": "hsl(192, 70%, 51%)",
+
+        // Neutral
+        "eb-grayish-blue": "hsl(233, 8%, 62%)",
+        "eb-light-grayish-blue": "hsl(220, 16%, 96%)",
+        "eb-very-light-gray": "hsl(0, 0%, 98%)",
+        "eb-white": "hsl(0, 0%, 100%)",
+      },
+      fontFamily: {
+        publicsans: ["Public Sans", "sans-serif"],
+      },
+      fontSize: {
+        base: "18px",
+      },
+      fontWeight: {
+        normal: "300",
+        semibold: "400",
+        bold: "700",
+      },
+      screens: {
+        mobile: "375px",
+        desktop: "1440px",
+      },
       backgroundImage: {
-        // "sample-bg": "/tsugini" // basepath of github pages
+        // "samplebg": "/tsugini" // basepath of github pages
       },
     },
   },

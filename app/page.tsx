@@ -6,7 +6,7 @@ export default function Home() {
   return (
     <>
       <Header />
-      <main className="flex flex-grow flex-col items-center justify-center p-24">
+      <main className="flex flex-grow flex-col items-center justify-center bg-yellow-500 p-24">
         <SandBox />
       </main>
       <Footer />
