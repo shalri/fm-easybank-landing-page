@@ -2,8 +2,17 @@
 @tailwind components;
 @tailwind utilities;
 
+body {
+  font-size: 18px;
+}
 .no-scroll {
   overflow: hidden;
+}
+
+.hero-bg {
+  background: #fff url(/images/bg-intro-mobile.svg) no-repeat;
+  background-size: cover;
+  background-position: top -64px center;
 }
 
 .hamburger {

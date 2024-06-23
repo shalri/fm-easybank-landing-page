@@ -1,3 +1,14 @@
+import apiIcon from "../public/images/icon-api.svg";
+import budgetingIcon from "../public/images/icon-budgeting.svg";
+import closeIcon from "../public/images/icon-close.svg";
+import onboardingIcon from "../public/images/icon-onboarding.svg";
+import onlineIcon from "../public/images/icon-online.svg";
+import fbIcon from "../public/images/icon-facebook.svg";
+import igIcon from "../public/images/icon-instagram.svg";
+import pinterestIcon from "../public/images/icon-pinterest.svg";
+import twitterIcon from "../public/images/icon-twitter.svg";
+import ytIcon from "../public/images/icon-youtube.svg";
+
 export const navLinks = [
   {
     title: "Home",
@@ -35,18 +46,22 @@ export const features = [
   {
     title: "Online Banking",
     copy: "Our modern web and mobile applications allow you to keep track of your finances wherever you are in the world.",
+    icon: onlineIcon,
   },
   {
     title: "Simple Budgeting",
     copy: "See exactly where your money goes each month. Receive notifications when you’re close to hitting your limits.",
+    icon: budgetingIcon,
   },
   {
     title: "Fast Onboarding",
     copy: "We don’t do branches. Open your account in minutes online and start taking control of your finances right away.",
+    icon: onboardingIcon,
   },
   {
     title: "Open API",
     copy: "Manage your savings, investments, pension, and much more from one account. Tracking your money has never been easier.",
+    icon: apiIcon,
   },
 ];
 

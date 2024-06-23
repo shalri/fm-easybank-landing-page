@@ -51,7 +51,7 @@ export default function Header() {
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           exit={{ opacity: 0, y: -10 }}
-          className="fixed left-6 right-6 z-10 mt-16 rounded-md bg-eb-white"
+          className="fixed left-6 right-6 z-10 mt-12 rounded-md bg-eb-white"
         >
           {children}
         </motion.div>
@@ -63,12 +63,12 @@ export default function Header() {
     <ul
       className={cn(
         "hidden",
-        isMobileNavActive && "flex w-full flex-col items-center",
+        isMobileNavActive && "flex w-full flex-col items-center gap-y-4 py-8",
       )}
     >
       {navLinks.map((page) => (
         <li className="" key={page.title}>
-          <a href={page.url} className="">
+          <a href={page.url} className="text-eb-dark-blue">
             {page.title}
           </a>
         </li>

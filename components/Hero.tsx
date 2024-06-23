@@ -1,29 +1,30 @@
 import Image from "next/image";
 
 import { heroCopy } from "@/lib/data";
+import Button from "./Button";
 
 export default function Hero() {
   const { heading, body } = heroCopy;
   return (
-    //    {/* <section className="overflow-hidden bg-eb-white bg-[url(/images/bg-intro-mobile.svg)] bg-cover bg-right-top bg-no-repeat"> */}
-    <section className="flex flex-col items-center justify-center overflow-hidden  bg-[url(/images/bg-intro-mobile.svg)] bg-cover bg-right-top bg-no-repeat">
-      <div className="min-w-[375px]bg-eb-white h-full">
-        <div className="h-full w-full px-4">
+    <section className="flex flex-col items-center justify-center overflow-hidden pb-20">
+      <div className="hero-bg mb-6 h-full min-w-[375px]">
+        <div className="relative h-full w-full px-4">
           <Image
             src="/images/image-mockups.png"
             width={500}
             height={500}
             alt="Mockup design"
-            // className="-mt-[122px] object-contain"
-            className="object-contain"
+            className="-mt-[122px] object-contain"
           />
         </div>
       </div>
-      <div>
-        <h1 className="">{heading}</h1>
-        <p className="">{body}</p>
+      <div className="px-6 text-center">
+        <h1 className="mb-4 text-[2.50rem] leading-tight text-eb-dark-blue">
+          {heading}
+        </h1>
+        <p className="mb-8 text-[0.95rem] text-eb-grayish-blue">{body}</p>
+        <Button text="Request Invite" />
       </div>
-      <button>request invite</button>
     </section>
   );
 }
