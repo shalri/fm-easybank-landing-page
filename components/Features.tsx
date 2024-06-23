@@ -3,10 +3,12 @@ import Image from "next/image";
 export default function Features() {
   const { heading, body } = featureIntroCopy;
   return (
-    <section className="bg-eb-very-light-gray pb-8 pt-16">
+    <section className="bg-eb-light-grayish-blue pb-8 pt-16">
       <div className="mb-14 px-6 text-center">
-        <h2 className="text-[2rem] text-eb-dark-blue">{heading}</h2>
-        <p className="mt-3 text-[0.95rem] text-eb-grayish-blue">{body}</p>
+        <h2 className="text-[2rem] leading-tight text-eb-dark-blue">
+          {heading}
+        </h2>
+        <p className="mt-4 text-[0.95rem] text-eb-grayish-blue">{body}</p>
       </div>
       <div className="">
         {features.map((feature) => (

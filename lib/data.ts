@@ -8,6 +8,11 @@ import igIcon from "../public/images/icon-instagram.svg";
 import pinterestIcon from "../public/images/icon-pinterest.svg";
 import twitterIcon from "../public/images/icon-twitter.svg";
 import ytIcon from "../public/images/icon-youtube.svg";
+import confettiImg from "../public/images/image-confetti.jpg";
+import currencyImg from "../public/images/image-currency.jpg";
+import mockupsImg from "../public/images/image-mockups.png";
+import planeImg from "../public/images/image-plane.jpg";
+import restaurantImg from "../public/images/image-restaurant.jpg";
 
 export const navLinks = [
   {
@@ -71,24 +76,28 @@ export const latestArticles = [
     title: "Receive money in any currency with no fees",
     intro:
       "The world is getting smaller and we’re becoming more mobile. So why should you be forced to only receive money in a single …",
+    image: currencyImg,
   },
   {
     author: "Wilson Hutton",
     title: "Treat yourself without worrying about money",
     intro:
       "Our simple budgeting feature allows you to separate out your spending and set realistic limits each month. That means you …",
+    image: restaurantImg,
   },
   {
     author: "Wilson Hutton",
     title: "Take your Easybank card wherever you go",
     intro:
       "We want you to enjoy your travels. This is why we don’t charge any fees on purchases while you’re abroad. We’ll even show you …",
+    image: planeImg,
   },
   {
     author: "Claire Robinson",
     title: "Our invite-only Beta accounts are now live!",
     intro:
       "After a lot of hard work by the whole team, we’re excited to launch our closed beta. It’s easy to request an invite through the site ...",
+    image: confettiImg,
   },
 ];
 
@@ -115,6 +124,34 @@ export const footerLinks = [
   },
   {
     title: "Privacy Policy",
+    url: "#",
+  },
+];
+
+export const socialLinks = [
+  {
+    title: "Facebook",
+    icon: fbIcon,
+    url: "#",
+  },
+  {
+    title: "YouTube",
+    icon: ytIcon,
+    url: "#",
+  },
+  {
+    title: "Twitter",
+    icon: twitterIcon,
+    url: "#",
+  },
+  {
+    title: "Pinterest",
+    icon: pinterestIcon,
+    url: "#",
+  },
+  {
+    title: "Instagram",
+    icon: igIcon,
     url: "#",
   },
 ];
