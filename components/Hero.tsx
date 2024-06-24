@@ -6,8 +6,8 @@ import Button from "./Button";
 export default function Hero() {
   const { heading, body } = heroCopy;
   return (
-    <section className="flex flex-col items-center justify-center overflow-hidden pb-20">
-      <div className="hero-bg mb-6 h-full min-w-[375px]">
+    <section className="flex flex-col items-center justify-center overflow-hidden bg-eb-very-light-gray pb-20 sm:flex-row">
+      <div className="hero-bg mb-6 h-full min-w-[50dvw]">
         <div className="relative h-full w-full px-4">
           <Image
             src="/images/image-mockups.png"
@@ -18,7 +18,7 @@ export default function Hero() {
           />
         </div>
       </div>
-      <div className="px-6 text-center">
+      <div className="order-first max-w-[50dvw] px-6 text-center">
         <h1 className="mb-4 text-[2.50rem] leading-tight text-eb-dark-blue">
           {heading}
         </h1>

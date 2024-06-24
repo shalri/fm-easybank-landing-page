@@ -4,6 +4,7 @@ import Image from "next/image";
 import { AnimatePresence, motion } from "framer-motion";
 import { cn } from "@/lib/utils";
 import { ReactNode, useEffect, useRef, useState } from "react";
+import Button from "./Button";
 
 export default function Header() {
   const [isMobileNavActive, setIsMobileNavActive] = useState(false);
@@ -62,13 +63,16 @@ export default function Header() {
   const navContent = (
     <ul
       className={cn(
-        "hidden",
+        "hidden sm:flex sm:gap-x-8 sm:text-[0.95rem]",
         isMobileNavActive && "flex w-full flex-col items-center gap-y-4 py-8",
       )}
     >
       {navLinks.map((page) => (
         <li className="" key={page.title}>
-          <a href={page.url} className="text-eb-dark-blue">
+          <a
+            href={page.url}
+            className="underline-hover text-semibold transition-color text-eb-dark-blue duration-300 sm:text-eb-grayish-blue sm:hover:text-eb-dark-blue"
+          >
             {page.title}
           </a>
         </li>
@@ -92,8 +96,8 @@ export default function Header() {
           />
         )}
       </AnimatePresence>
-      <header className="flex justify-between bg-eb-white">
-        <div className="mx-6 flex w-full items-center justify-between">
+      <header className="flex bg-eb-white">
+        <div className="mx-auto flex w-full items-center justify-between px-6 sm:h-20 sm:max-w-[1440px]">
           <div className="relative h-[50px] w-[150px]">
             <a href="#" className="relative block h-[50px] w-[150px]">
               <Image
@@ -122,6 +126,7 @@ export default function Header() {
               <span className="hamburger-inner"></span>
             </span>
           </button>
+          <Button className="hidden sm:block" />
         </div>
       </header>
     </div>
