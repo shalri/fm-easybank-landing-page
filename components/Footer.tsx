@@ -5,6 +5,9 @@ import Button from "./Button";
 export default function Footer() {
   return (
     <footer className="flex w-full flex-col items-center justify-center bg-eb-dark-blue py-10">
+      <div className="sm:w-full sm:grid sm:grid-cols-3 sm:max-w-[1440px] sm:px-6 sm:items-center">
+
+      <div className="sm:grid sm:grid-rows-2 sm:items-center">
       <div className="relative h-[50px] w-[150px]">
         <a href="#" className="relative block h-[50px] w-[150px]">
           <svg xmlns="http://www.w3.org/2000/svg" width="139" height="20">
@@ -46,26 +49,29 @@ export default function Footer() {
                 src={social.icon}
                 alt={social.title}
                 fill
-                className="object-cover"
+                className="object-cover hover:fill-eb-lime-green"
               />
             </a>
           </li>
         ))}
       </ul>
-      <div className="">
-        <ul className="my-8 text-center text-[0.95rem] text-eb-light-grayish-blue">
+      </div>
+        <ul className="sm:justify-self-start my-8 text-center text-[0.95rem] text-eb-light-grayish-blue sm:grid sm:grid-cols-2 sm:grid-rows-3 sm:my-0 sm:text-left">
           {footerLinks.map((page) => (
             <li className="mb-3" key={page.title}>
-              <a href={page.url} className="">
+              <a href={page.url} className="hover:text-eb-lime-green transition-colors duration-300">
                 {page.title}
               </a>
             </li>
           ))}
         </ul>
-      </div>
-      <Button />
-      <div className="mt-6 text-[0.95rem] text-eb-grayish-blue">
+      <div className="flex flex-col items-center sm:items-end sm:justify-center">
+
+      <Button className="sm:h-[48px]"/>
+      <div className="mt-6 text-[0.95rem] text-eb-grayish-blue sm:mt-4 mx-auto sm:mx-0">
         &copy; Easybank. All Right Reserved.
+      </div>
+      </div>
       </div>
     </footer>
   );
