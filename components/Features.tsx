@@ -13,7 +13,7 @@ export default function Features() {
             {body}
           </p>
         </div>
-        <div className="gap-x-8 sm:grid sm:grid-cols-4 sm:px-6">
+        <div className="gap-x-6 sm:grid sm:grid-cols-4 sm:px-6">
           {features.map((feature) => (
             <div
               className="mb-8 flex flex-col items-center justify-center px-6 sm:items-start sm:justify-start sm:px-0"

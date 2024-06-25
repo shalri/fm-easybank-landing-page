@@ -80,7 +80,7 @@ export default function Header() {
     </ul>
   );
   return (
-    <div className="">
+    <div className="z-10 ">
       <AnimatePresence>
         {isMobileNavActive && (
           <motion.div
