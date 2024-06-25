@@ -35,7 +35,7 @@ export default function Hero() {
             className="relative h-full w-full sm:min-h-full"
           >
             <Image
-              src="/images/image-mockups.png"
+              src="./images/image-mockups.png"
               {...(width >= 900
                 ? { layout: "fill" }
                 : { width: 500, height: 500 })}

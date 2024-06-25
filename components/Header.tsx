@@ -92,12 +92,12 @@ export default function Header() {
               },
             }}
             exit={{ opacity: 0 }}
-            className="min-w-screen fixed inset-0 top-[60px] z-10 min-h-screen bg-black/10 backdrop-blur-md"
+            className="min-w-screen fixed inset-0 top-[64px] z-10 min-h-screen bg-black/10 backdrop-blur-md"
           />
         )}
       </AnimatePresence>
       <header className="flex bg-eb-white">
-        <div className="mx-auto flex w-full items-center justify-between px-6 sm:h-20 sm:max-w-[1440px]">
+        <div className="mx-auto flex h-[64px] w-full items-center justify-between px-6 sm:h-20 sm:max-w-[1440px]">
           <div className="relative h-[50px] w-[150px]">
             <a href="#" className="relative block h-[50px] w-[150px]">
               <Image

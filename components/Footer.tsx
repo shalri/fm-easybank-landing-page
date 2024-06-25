@@ -18,6 +18,19 @@ const linksAnimation = {
   }),
 };
 
+const footerButtonAnimation = {
+  hidden: {
+    opacity: 0, scale: 0.7,
+  },
+  visible: {
+    opacity: 1,
+    scale: 1,
+    transition: {
+      delay: 1.5,
+    }
+  }
+}
+
 export default function Footer() {
   return (
     <footer className="bg-eb-dark-blue py-10">
@@ -93,7 +106,14 @@ className="mb-3" key={page.title}>
           ))}
         </ul>
         <div className="flex flex-col items-center sm:items-end sm:justify-center">
+          <motion.div
+          initial="hidden"
+          whileInView="visible"
+          variants={footerButtonAnimation}
+          viewport={{once: true,}}
+          >
           <Button className="sm:h-[48px]" />
+          </motion.div>
           <div className="mx-auto mt-6 text-[0.95rem] text-eb-grayish-blue sm:mx-0 sm:mt-4">
             &copy; Easybank. All Right Reserved.
           </div>
