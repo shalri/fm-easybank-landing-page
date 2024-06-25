@@ -6,8 +6,7 @@ export default function Footer() {
   return (
     <footer className="bg-eb-dark-blue py-10">
       <div className="sm:grid sm:w-full sm:max-w-[1440px] sm:grid-cols-3 sm:items-center sm:px-6">
-
-        <div className="sm:grid sm:grid-rows-2 sm:items-center flex justify-center flex-col items-center">
+        <div className="flex flex-col items-center justify-center sm:grid sm:grid-rows-2 sm:items-center sm:justify-start">
           <div className="relative h-[50px] w-[150px]">
             <a href="#" className="relative block h-[50px] w-[150px]">
               <svg xmlns="http://www.w3.org/2000/svg" width="139" height="20">
