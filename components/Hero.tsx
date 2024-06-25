@@ -4,6 +4,7 @@ import Image from "next/image";
 import { heroCopy } from "@/lib/data";
 import Button from "./Button";
 import useWindowSize from "@/hooks/useWindowSize";
+import { motion } from "framer-motion";
 
 export default function Hero() {
   const { heading, body } = heroCopy;
@@ -11,8 +12,28 @@ export default function Hero() {
   return (
     <section className="bg-eb-very-light-gray pb-20 sm:relative sm:flex sm:min-h-[50dvh] sm:items-center sm:overflow-x-clip sm:overflow-y-visible sm:pb-0 lg:min-h-[70dvh]">
       <div className="flex flex-col items-center justify-center sm:mx-auto sm:grid sm:h-full sm:max-w-[1440px] sm:grid-cols-2">
-        <div className="hero-bg mb-6 h-full px-4 sm:absolute sm:right-0 sm:top-0 sm:-mr-[100px] sm:mb-0 sm:h-[120%] sm:min-w-[60dvw] sm:px-0">
-          <div className="relative h-full w-full sm:min-h-full">
+        <motion.div
+          initial={{ opacity: 0, scale: 1.5 }}
+          animate={{
+            opacity: 1,
+            scale: 1,
+            transition: {
+              duration: 0.4,
+            },
+          }}
+          className="hero-bg mb-6 h-full px-4 sm:absolute sm:right-0 sm:top-0 sm:-mr-[100px] sm:mb-0 sm:h-[120%] sm:min-w-[60dvw] sm:px-0"
+        >
+          <motion.div
+            initial={{ opacity: 0, y: "-200%" }}
+            animate={{
+              opacity: 1,
+              y: 0,
+              transition: {
+                delay: 0.6,
+              },
+            }}
+            className="relative h-full w-full sm:min-h-full"
+          >
             <Image
               src="/images/image-mockups.png"
               {...(width >= 900
@@ -21,8 +42,8 @@ export default function Hero() {
               alt="Mockup design"
               className="-mt-[122px] object-cover sm:mt-8 sm:object-contain"
             />
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
         <div className="px-6 text-center sm:order-first sm:max-w-[50dvw] sm:self-center sm:text-left">
           <h1 className="mb-4 text-[2.50rem] leading-tight text-eb-dark-blue sm:text-[3.25rem]">
             {heading}

@@ -126,7 +126,9 @@ export default function Header() {
               <span className="hamburger-inner"></span>
             </span>
           </button>
-          <Button className="hidden sm:block" />
+          <div className="hidden sm:block">
+            <Button />
+          </div>
         </div>
       </header>
     </div>

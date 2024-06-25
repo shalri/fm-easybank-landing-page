@@ -1,11 +1,27 @@
+"use client"
 import { footerLinks, socialLinks } from "@/lib/data";
 import Image from "next/image";
 import Button from "./Button";
+import { motion } from "framer-motion";
+
+const linksAnimation = {
+  hidden: {
+    opacity: .2, color: "hsl(192, 70%, 51%)"
+  },
+  visible: (index: number) => ({
+    opacity: 1,
+    color: "white",
+    transition: {
+      delay: 0.3 * index,
+      duration: 0.5
+    }
+  }),
+};
 
 export default function Footer() {
   return (
     <footer className="bg-eb-dark-blue py-10">
-      <div className="sm:grid sm:w-full sm:max-w-[1440px] sm:grid-cols-3 sm:items-center sm:px-6">
+      <div className="sm:mx-auto sm:grid sm:w-full sm:max-w-[1440px] sm:grid-cols-3 sm:items-center sm:px-6">
         <div className="flex flex-col items-center justify-center sm:grid sm:grid-rows-2 sm:items-center sm:justify-start">
           <div className="relative h-[50px] w-[150px]">
             <a href="#" className="relative block h-[50px] w-[150px]">
@@ -45,7 +61,7 @@ export default function Footer() {
           </div>
           <ul className="flex gap-x-4">
             {socialLinks.map((social) => (
-              <li key={social.title} className="">
+              <motion.li key={social.title} className="">
                 <a href={social.url} className="relative block h-6 w-6">
                   <Image
                     src={social.icon}
@@ -54,20 +70,26 @@ export default function Footer() {
                     className="object-cover hover:fill-eb-lime-green"
                   />
                 </a>
-              </li>
+              </motion.li>
             ))}
           </ul>
         </div>
         <ul className="my-8 text-center text-[0.95rem] text-eb-light-grayish-blue sm:my-0 sm:grid sm:grid-cols-2 sm:grid-rows-3 sm:justify-self-start sm:text-left">
-          {footerLinks.map((page) => (
-            <li className="mb-3" key={page.title}>
-              <a
+          {footerLinks.map((page, i) => (
+            <motion.li
+                variants={linksAnimation}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{once: true,}}
+                custom={i}
+className="mb-3" key={page.title}>
+              <motion.a
                 href={page.url}
                 className="transition-colors duration-300 hover:text-eb-lime-green"
               >
                 {page.title}
-              </a>
-            </li>
+              </motion.a>
+            </motion.li>
           ))}
         </ul>
         <div className="flex flex-col items-center sm:items-end sm:justify-center">
