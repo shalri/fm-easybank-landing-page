@@ -9,7 +9,7 @@ export default function Features() {
           <h2 className="text-[2rem] leading-tight text-eb-dark-blue sm:text-[2.525rem]">
             {heading}
           </h2>
-          <p className="mt-4 text-[0.95rem] text-eb-grayish-blue sm:max-w-[50%] sm:text-base">
+          <p className="mx-auto mt-4 max-w-[350px] text-[0.95rem] text-eb-grayish-blue sm:mx-0 sm:max-w-[50%] sm:text-base">
             {body}
           </p>
         </div>
@@ -30,7 +30,7 @@ export default function Features() {
               <h3 className="mb-4 mt-5 text-[1.30rem] text-eb-dark-blue sm:mb-6 sm:mt-10 sm:text-2xl">
                 {feature.title}
               </h3>
-              <p className="text-center text-[0.95rem] text-eb-grayish-blue sm:text-left sm:text-[0.985rem]">
+              <p className="max-w-[350px] text-center text-[0.95rem] text-eb-grayish-blue sm:text-left sm:text-[0.985rem]">
                 {feature.copy}
               </p>
             </div>

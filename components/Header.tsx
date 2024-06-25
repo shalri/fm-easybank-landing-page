@@ -29,7 +29,7 @@ export default function Header() {
       }
     };
     const checkScreenSize = () => {
-      setIsSmallScreen(window.innerWidth < 768);
+      setIsSmallScreen(window.innerWidth < 900);
     };
 
     window.addEventListener("resize", checkScreenSize);
